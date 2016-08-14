@@ -1,0 +1,48 @@
+Functions ---------------------------------------------------------
+
+- Pointer in c++ are simpler than c, check out the syntx
+  void asd(int& a) {}
+  asd(variable);
+
+- use angular arrows in place of + for concatenation in cout
+
+Strings -----------------------------------------------------------
+
+- strings unlike in java are immutable
+
+- >, != can be used with strings due to its
+  operator overloading feature.
+
+- string::npos is the index returned when a particular char is
+  not found while searching. In java js, -1 is returned.
+
+- "Hellow"  is a C string
+
+- string s = "hello " + "asd"; // wrong because hello and asd are c strings
+
+- "hellow".length(); // error
+
+- str s = "hellow"; // casted
+  s.length(); // no error
+
+- C strings to C++ string =  string("helow");
+
+- C++ strings to C string = string.c_str();
+
+- int n = (int) "42"; // bug in c++ - store memory address of "42"
+  use stringToInteger - in stanford libs and integerToString() for vice versa
+
+- Concatenation errors :
+  string s = "hellow" + "?"; // C string + char // buggy
+  string s = "hellow" + 21; // Cstring + int // buggy
+  string s = "hellow"; s += 41; // Output - 'hellow)' coz 41 is ascii for ')'
+
+- cin >> name; // lets say we entered 'Arshad Khan'
+  // but name will hold only 'Arshad' because cin reads word by word so
+  // better use getline
+
+IO streams -----------------------------------------------------------------
+
+- cin is variable of type ifstream and cout is variable of type cout
+
+- use fileExists(path) to check if file exists //filelib.h
