@@ -1,10 +1,13 @@
 /*
  * File: ConsecutiveHeads.cpp
  * --------------------------
- * Name: [TODO: enter name here]
- * Section: [TODO: enter section leader here]
+ * Name: Arshad Khan
+ *
  * This file is the starter project for the coin-flipping problem.
- * [TODO: rewrite the documentation]
+ *
+ * This program simulates flipping a coin repeatedly and continues until three
+ * consecutive heads are tossed. At that point, it displays the total
+ * number of coin flips that were made.
  */
 
 #include <iostream>
