@@ -90,8 +90,15 @@ From ER notes :--------------------------------------------------------------
     Functions can specify optional parameters by including an initializer after
     the variable name.  For example, the function prototype
 
-    int asd(int mar = 72){...} // mar is optional having value 72 for asd
-    function
+    int asd(int mar = 72){...} // mar is optional having value 72 for asd function
+    However, complications arise in the case of multiple arguments. The compiler can't tell which argument you've omitted
+    Consider the following code.
+    int myfunction( int optional = 3, int mandatory );
+    What will myfunction(4); return?
+    Because this is ambiguous, your arguments must be placed in order, sorted by how often you will pass values to them.
+    For example, since you ALWAYS pass an argument to mandatory, that must come first. If there is a function with two default
+    values int myfunction( int mandatory, int optional1 = 3, int optional2 = 5 ); then the program will omit the values at the
+    end if you don't specify all of the arguments, so it makes sense to put the arguments you use more often first. 
 
 
     String and streams--
