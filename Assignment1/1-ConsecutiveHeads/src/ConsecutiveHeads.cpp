@@ -13,7 +13,30 @@
 #include "random.h"
 using namespace std;
 
+string flipCoin();
+
 int main() {
-   // [TODO: fill in the code]
+   int flips = 0, consecHeads = 0;
+
+   while(consecHeads < 3) {
+       string result = flipCoin();
+       cout << result << endl;
+
+       if(result == "Heads")
+           consecHeads++;
+       else
+           consecHeads = 0;
+
+       flips++;
+   }
+
+   cout << "It tooks " << flips << " flips to get 3 consecutive heads." << endl;
    return 0;
+}
+
+string flipCoin(){
+    if(randomBool())
+        return "Heads";
+    else
+        return "Tails";
 }

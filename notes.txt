@@ -33,7 +33,7 @@ Strings -----------------------------------------------------------
   use stringToInteger - in stanford libs and integerToString() for vice versa
 
 - Concatenation errors :
-  string s = "hellow" + "?"; // C string + char // buggy
+  string s = "hellow" + '?'; // C string + char // buggy
   string s = "hellow" + 21; // Cstring + int // buggy
   string s = "hellow"; s += 41; // Output - 'hellow)' coz 41 is ascii for ')'
 
@@ -100,5 +100,7 @@ From ER notes :--------------------------------------------------------------
     that allow for a larger range. not using it cs106b
 
     Note :
-    ifstream and ofstream 's  open method/mem function takes C string, not C++ 
+    ifstream and ofstream 's  open method/mem function takes C string, not C++
     string-- Mind it.
+
+    And use '' for chars and " " for strings.
