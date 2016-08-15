@@ -46,3 +46,59 @@ IO streams -----------------------------------------------------------------
 - cin is variable of type ifstream and cout is variable of type cout
 
 - use fileExists(path) to check if file exists //filelib.h
+
+From ER notes :--------------------------------------------------------------
+
+
+    The type of Boolean variables is bool instead of boolean.
+
+    The type char represents an 8-bit ASCII character instead of a 16-bit
+     Unicode character.
+
+    Programs in C++ begin by calling a function named main that returns an
+     integer status, which is 0 on successful completion.
+
+    All functions used in a C++ program must be preceded by a prototype that
+    defines their parameter structure.
+
+    There are many accidental differences in the methods exported by the string
+    class.  For example, the second argument to the C++ substr method is the
+    length and not the ending position.
+
+    The discipline used for console I/O is significantly different, but not
+    essentially so.
+
+    C++ allows you to get very close to the inner workings of the machine.  Java
+    protects you from these details.
+
+    C++ supports call by reference.
+
+    C++ allows programmers to modify the language in more ways than Java does.
+
+    In particular, a C++ class can redefine the meaning of operators such as +
+    or <<.
+
+    C++ has no garbage collector of the sort that Java does.  As a result, you
+    are responsible for freeing any memory that is allocated on the heap.
+
+    Objects in Java are always allocated in the heap. In C++, objects are
+    typically stored on the stack to simplify the task of memory management.
+
+    C++ supports multiple inheritance, which means that classes can inherit
+    behavior from more than one superclass.
+
+    Functions can specify optional parameters by including an initializer after
+    the variable name.  For example, the function prototype
+
+    int asd(int mar = 72){...} // mar is optional having value 72 for asd
+    function
+
+
+    String and streams--
+
+    The C++ libraries define the type wchar_t to represent “wide characters”
+    that allow for a larger range. not using it cs106b
+
+    Note :
+    ifstream and ofstream 's  open method/mem function takes C string, not C++ 
+    string-- Mind it.
