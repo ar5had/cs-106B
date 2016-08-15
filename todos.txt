@@ -1,2 +1,17 @@
 Assignment1
 -do consecutive heads with recursion.
+
+Grids lecture
+-knights move question.
+
+Stacks lecture
+-cury braces and parentheses
+-1,2,3 to 1,2,3,3,2,1
+
+Queue lecture
+-1,2,3 into 1,1,2,2,3,3
+
+File Read
+- input >> word - check this out.
+
+lexicon and trim function and tokenscanner.

@@ -98,7 +98,7 @@ From ER notes :--------------------------------------------------------------
     Because this is ambiguous, your arguments must be placed in order, sorted by how often you will pass values to them.
     For example, since you ALWAYS pass an argument to mandatory, that must come first. If there is a function with two default
     values int myfunction( int mandatory, int optional1 = 3, int optional2 = 5 ); then the program will omit the values at the
-    end if you don't specify all of the arguments, so it makes sense to put the arguments you use more often first. 
+    end if you don't specify all of the arguments, so it makes sense to put the arguments you use more often first.
 
 
     String and streams--
@@ -111,3 +111,8 @@ From ER notes :--------------------------------------------------------------
     string-- Mind it.
 
     And use '' for chars and " " for strings.
+
+Sets martystepp lecture --------------------------------------------------------
+
+  maths can be done on sets eg- s1 += s2 and so on... a watch out for s1*s2 and
+  s1*=s2.
