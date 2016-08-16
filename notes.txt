@@ -120,3 +120,6 @@ Sets martystepp lecture --------------------------------------------------------
 
 Another strategy for for loop:
   Syntax for(strings : v) {...}
+
+
+Note - while checking conditions, first return false in all the failing conditions then what left will be true.
