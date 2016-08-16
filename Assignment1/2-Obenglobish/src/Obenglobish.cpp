@@ -1,10 +1,11 @@
 /*
  * File: Obenglobish.java
  * ----------------------
- * Name: [TODO: enter name here]
- * Section: [TODO: enter section leader here]
- * This file is the starter project for the Obenglobish problem.
- * [TODO: rewrite the documentation]
+ * Name: Arshad Khan
+ *
+ * This program that takes an English word and returns its Obenglobish equivalent,
+ * using the translation rule given below.
+ * Rule - add 'ob' before every vowel in word given by user.
  */
 
 #include <iostream>
@@ -12,11 +13,26 @@
 #include "console.h"
 #include "simpio.h"
 #include "strlib.h"
-using namespace std;
 
+using namespace std;
 /* Main program */
 
-int main() {
-   // [TODO: fill in the code]
-   return 0;
+string obenglobish(string word);
+
+int main(){
+
+    while(true) {
+        string word = getLine("Enter the word...");
+        if(word == "")
+            break;
+        else
+            cout << word << "=>" << obenglobish(word) << endl;
+    }
+
+    return 0;
+}
+
+string obenglobish(string word) {
+
+    return word;
 }
