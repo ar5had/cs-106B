@@ -116,3 +116,7 @@ Sets martystepp lecture --------------------------------------------------------
 
   maths can be done on sets eg- s1 += s2 and so on... a watch out for s1*s2 and
   s1*=s2.
+
+
+Another strategy for for loop:
+  Syntax for(strings : v) {...}

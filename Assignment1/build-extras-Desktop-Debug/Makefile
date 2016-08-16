@@ -86,7 +86,7 @@ SOURCES       = ../extras/lib/StanfordCPPLib/base64.cpp \
 		../extras/lib/StanfordCPPLib/version.cpp \
 		../extras/lib/StanfordCPPLib/stacktrace/call_stack_gcc.cpp \
 		../extras/lib/StanfordCPPLib/stacktrace/call_stack_windows.cpp \
-		../extras/src/extra.cpp 
+		../extras/src/mirror.cpp 
 OBJECTS       = base64.o \
 		basicgraph.o \
 		bitstream.o \
@@ -125,7 +125,7 @@ OBJECTS       = base64.o \
 		version.o \
 		call_stack_gcc.o \
 		call_stack_windows.o \
-		extra.o
+		mirror.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -274,7 +274,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../extras/lib/StanfordCPPLib/version.cpp \
 		../extras/lib/StanfordCPPLib/stacktrace/call_stack_gcc.cpp \
 		../extras/lib/StanfordCPPLib/stacktrace/call_stack_windows.cpp \
-		../extras/src/extra.cpp
+		../extras/src/mirror.cpp
 QMAKE_TARGET  = extras
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = extras
@@ -437,7 +437,7 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../extras/lib/StanfordCPPLib/base64.h ../extras/lib/StanfordCPPLib/basicgraph.h ../extras/lib/StanfordCPPLib/bitstream.h ../extras/lib/StanfordCPPLib/compare.h ../extras/lib/StanfordCPPLib/console.h ../extras/lib/StanfordCPPLib/dawglexicon.h ../extras/lib/StanfordCPPLib/deque.h ../extras/lib/StanfordCPPLib/direction.h ../extras/lib/StanfordCPPLib/error.h ../extras/lib/StanfordCPPLib/exceptions.h ../extras/lib/StanfordCPPLib/filelib.h ../extras/lib/StanfordCPPLib/foreach.h ../extras/lib/StanfordCPPLib/gbufferedimage.h ../extras/lib/StanfordCPPLib/gevents.h ../extras/lib/StanfordCPPLib/gfilechooser.h ../extras/lib/StanfordCPPLib/ginteractors.h ../extras/lib/StanfordCPPLib/gmath.h ../extras/lib/StanfordCPPLib/gobjects.h ../extras/lib/StanfordCPPLib/goptionpane.h ../extras/lib/StanfordCPPLib/graph.h ../extras/lib/StanfordCPPLib/grid.h ../extras/lib/StanfordCPPLib/gtimer.h ../extras/lib/StanfordCPPLib/gtypes.h ../extras/lib/StanfordCPPLib/gwindow.h ../extras/lib/StanfordCPPLib/hashcode.h ../extras/lib/StanfordCPPLib/hashmap.h ../extras/lib/StanfordCPPLib/hashset.h ../extras/lib/StanfordCPPLib/lexicon.h ../extras/lib/StanfordCPPLib/linkedlist.h ../extras/lib/StanfordCPPLib/map.h ../extras/lib/StanfordCPPLib/observable.h ../extras/lib/StanfordCPPLib/platform.h ../extras/lib/StanfordCPPLib/point.h ../extras/lib/StanfordCPPLib/pqueue.h ../extras/lib/StanfordCPPLib/queue.h ../extras/lib/StanfordCPPLib/random.h ../extras/lib/StanfordCPPLib/regexpr.h ../extras/lib/StanfordCPPLib/set.h ../extras/lib/StanfordCPPLib/shuffle.h ../extras/lib/StanfordCPPLib/simpio.h ../extras/lib/StanfordCPPLib/sound.h ../extras/lib/StanfordCPPLib/sparsegrid.h ../extras/lib/StanfordCPPLib/stack.h ../extras/lib/StanfordCPPLib/strlib.h ../extras/lib/StanfordCPPLib/timer.h ../extras/lib/StanfordCPPLib/tokenscanner.h ../extras/lib/StanfordCPPLib/urlstream.h ../extras/lib/StanfordCPPLib/vector.h ../extras/lib/StanfordCPPLib/private/foreachpatch.h ../extras/lib/StanfordCPPLib/private/main.h ../extras/lib/StanfordCPPLib/private/randompatch.h ../extras/lib/StanfordCPPLib/private/tokenpatch.h ../extras/lib/StanfordCPPLib/private/tplatform.h ../extras/lib/StanfordCPPLib/private/version.h ../extras/lib/StanfordCPPLib/stacktrace/call_stack.h ../extras/lib/StanfordCPPLib/stacktrace/stack_exception.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../extras/lib/StanfordCPPLib/base64.cpp ../extras/lib/StanfordCPPLib/basicgraph.cpp ../extras/lib/StanfordCPPLib/bitstream.cpp ../extras/lib/StanfordCPPLib/console.cpp ../extras/lib/StanfordCPPLib/dawglexicon.cpp ../extras/lib/StanfordCPPLib/direction.cpp ../extras/lib/StanfordCPPLib/error.cpp ../extras/lib/StanfordCPPLib/exceptions.cpp ../extras/lib/StanfordCPPLib/filelib.cpp ../extras/lib/StanfordCPPLib/gbufferedimage.cpp ../extras/lib/StanfordCPPLib/gevents.cpp ../extras/lib/StanfordCPPLib/gfilechooser.cpp ../extras/lib/StanfordCPPLib/ginteractors.cpp ../extras/lib/StanfordCPPLib/gmath.cpp ../extras/lib/StanfordCPPLib/gobjects.cpp ../extras/lib/StanfordCPPLib/goptionpane.cpp ../extras/lib/StanfordCPPLib/gtimer.cpp ../extras/lib/StanfordCPPLib/gtypes.cpp ../extras/lib/StanfordCPPLib/gwindow.cpp ../extras/lib/StanfordCPPLib/hashcode.cpp ../extras/lib/StanfordCPPLib/lexicon.cpp ../extras/lib/StanfordCPPLib/main.cpp ../extras/lib/StanfordCPPLib/observable.cpp ../extras/lib/StanfordCPPLib/platform.cpp ../extras/lib/StanfordCPPLib/point.cpp ../extras/lib/StanfordCPPLib/random.cpp ../extras/lib/StanfordCPPLib/regexpr.cpp ../extras/lib/StanfordCPPLib/shuffle.cpp ../extras/lib/StanfordCPPLib/simpio.cpp ../extras/lib/StanfordCPPLib/sound.cpp ../extras/lib/StanfordCPPLib/startup.cpp ../extras/lib/StanfordCPPLib/strlib.cpp ../extras/lib/StanfordCPPLib/timer.cpp ../extras/lib/StanfordCPPLib/tokenscanner.cpp ../extras/lib/StanfordCPPLib/urlstream.cpp ../extras/lib/StanfordCPPLib/version.cpp ../extras/lib/StanfordCPPLib/stacktrace/call_stack_gcc.cpp ../extras/lib/StanfordCPPLib/stacktrace/call_stack_windows.cpp ../extras/src/extra.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../extras/lib/StanfordCPPLib/base64.cpp ../extras/lib/StanfordCPPLib/basicgraph.cpp ../extras/lib/StanfordCPPLib/bitstream.cpp ../extras/lib/StanfordCPPLib/console.cpp ../extras/lib/StanfordCPPLib/dawglexicon.cpp ../extras/lib/StanfordCPPLib/direction.cpp ../extras/lib/StanfordCPPLib/error.cpp ../extras/lib/StanfordCPPLib/exceptions.cpp ../extras/lib/StanfordCPPLib/filelib.cpp ../extras/lib/StanfordCPPLib/gbufferedimage.cpp ../extras/lib/StanfordCPPLib/gevents.cpp ../extras/lib/StanfordCPPLib/gfilechooser.cpp ../extras/lib/StanfordCPPLib/ginteractors.cpp ../extras/lib/StanfordCPPLib/gmath.cpp ../extras/lib/StanfordCPPLib/gobjects.cpp ../extras/lib/StanfordCPPLib/goptionpane.cpp ../extras/lib/StanfordCPPLib/gtimer.cpp ../extras/lib/StanfordCPPLib/gtypes.cpp ../extras/lib/StanfordCPPLib/gwindow.cpp ../extras/lib/StanfordCPPLib/hashcode.cpp ../extras/lib/StanfordCPPLib/lexicon.cpp ../extras/lib/StanfordCPPLib/main.cpp ../extras/lib/StanfordCPPLib/observable.cpp ../extras/lib/StanfordCPPLib/platform.cpp ../extras/lib/StanfordCPPLib/point.cpp ../extras/lib/StanfordCPPLib/random.cpp ../extras/lib/StanfordCPPLib/regexpr.cpp ../extras/lib/StanfordCPPLib/shuffle.cpp ../extras/lib/StanfordCPPLib/simpio.cpp ../extras/lib/StanfordCPPLib/sound.cpp ../extras/lib/StanfordCPPLib/startup.cpp ../extras/lib/StanfordCPPLib/strlib.cpp ../extras/lib/StanfordCPPLib/timer.cpp ../extras/lib/StanfordCPPLib/tokenscanner.cpp ../extras/lib/StanfordCPPLib/urlstream.cpp ../extras/lib/StanfordCPPLib/version.cpp ../extras/lib/StanfordCPPLib/stacktrace/call_stack_gcc.cpp ../extras/lib/StanfordCPPLib/stacktrace/call_stack_windows.cpp ../extras/src/mirror.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -951,10 +951,17 @@ call_stack_windows.o: ../extras/lib/StanfordCPPLib/stacktrace/call_stack_windows
 		../extras/lib/StanfordCPPLib/sound.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o call_stack_windows.o ../extras/lib/StanfordCPPLib/stacktrace/call_stack_windows.cpp
 
-extra.o: ../extras/src/extra.cpp ../extras/lib/StanfordCPPLib/console.h \
+mirror.o: ../extras/src/mirror.cpp ../extras/lib/StanfordCPPLib/console.h \
 		../extras/lib/StanfordCPPLib/private/main.h \
-		../extras/lib/StanfordCPPLib/random.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o extra.o ../extras/src/extra.cpp
+		../extras/lib/StanfordCPPLib/stack.h \
+		../extras/lib/StanfordCPPLib/error.h \
+		../extras/lib/StanfordCPPLib/hashcode.h \
+		../extras/lib/StanfordCPPLib/vector.h \
+		../extras/lib/StanfordCPPLib/compare.h \
+		../extras/lib/StanfordCPPLib/random.h \
+		../extras/lib/StanfordCPPLib/strlib.h \
+		../extras/lib/StanfordCPPLib/queue.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mirror.o ../extras/src/mirror.cpp
 
 ####### Install
 
