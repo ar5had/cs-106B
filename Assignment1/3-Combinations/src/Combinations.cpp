@@ -19,19 +19,18 @@ int main() {
         int n = getInteger("Enter 'n': ");
         int k = getInteger("Enter 'k': ");
         if (n < k) {
-            cout << "Enter 'k' value less than n ..." << endl;
+            cout << "Enter 'k' value less than n !" << endl;
             continue;
         }
         cout << "C(n, k) => " << combination(n, k) << endl;
         if( !getYesOrNo("Do you want to continue - 'yes' or 'no' ?") )
             break;
     }
-    printPascalTriangle(getInteger("How many rows of pascal triangle do you want to get printed ?"));
+    printPascalTriangle(10);
     return 0;
 }
 
 int combination(int n, int k) {
-    cout << n << " " << k << endl;
     if(n == k || k == 0)
         return 1;
     else
@@ -39,6 +38,15 @@ int combination(int n, int k) {
 }
 
 void printPascalTriangle(int rows) {
-    cout << "Here " << (rows == 1 ? "is the " : "are the ") << rows << " of Pascal triangle." << endl;
-
+    cout << endl;
+    cout << endl;
+    cout << "Here are the ten rows of pascal triangle." << endl;
+    cout << endl;
+    cout << endl;
+    for(int i = 0; i < rows; i++) {
+        for(int j = 0; j <= i; j++) {
+            cout << combination(i, j) << "  ";
+        }
+        cout << endl;
+    }
 }
