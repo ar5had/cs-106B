@@ -13,16 +13,19 @@
 #include "console.h"
 #include "simpio.h"
 #include "strlib.h"
+#include "vector.h"
 
 using namespace std;
 /* Main program */
 
 string obenglobish(string word);
+bool containsVowel(char s);
 
 int main(){
 
     while(true) {
         string word = getLine("Enter the word...");
+        word = toLowerCase(word);
         if(word == "")
             break;
         else
@@ -33,6 +36,19 @@ int main(){
 }
 
 string obenglobish(string word) {
+    string holder = "";
+    for(int i = 0; i < word.length(); i++) {
+        if(containsVowel(word[i])) {
+            holder += "ob";
+        }
+        holder += word[i];
+    }
+    return holder;
+}
 
-    return word;
+bool containsVowel(char s) {
+    if(s == 'a' || s == 'e' || s == 'i' || s == 'o' || s == 'u')
+        return true;
+    else
+        return false;
 }
