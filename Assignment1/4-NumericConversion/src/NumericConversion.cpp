@@ -1,11 +1,9 @@
 /*
  * File: NumericConversion.cpp
  * ---------------------------
- * Name: [TODO: enter name here]
- * Section: [TODO: enter section leader here]
- * This file is the starter project for the numeric-conversion problem
- * in which you implement the functions intToString and stringToInt.
- * [TODO: rewrite the documentation]
+ * Name: Arshad Khan
+ *
+ * Implement intToString and stringToInt recursively.
  */
 
 #include <iostream>
@@ -21,6 +19,19 @@ int stringToInt(string str);
 /* Main program */
 
 int main() {
-   // [TODO: fill in the code]
-   return 0;
+    string numStr = getLine("String: Enter no...");
+    int numInt = getInteger("Integer: Enter no...")
+    string numIntStr = intToString(numInt);
+    int numStrInt = stringToInt(numStr);
+    return 0;
+}
+
+string intToString(int n) {
+//    var digit = n % 10;
+//    n = n / 10;
+//    return string(digit)
+}
+
+int stringToInt(string str) {
+
 }
