@@ -295,3 +295,6 @@ exists($$PWD/lib/autograder/*.cpp) {
         copyToDestdir($$files($$PWD/*.h))
     }
 }
+
+DISTFILES += \
+    res/nos.txt

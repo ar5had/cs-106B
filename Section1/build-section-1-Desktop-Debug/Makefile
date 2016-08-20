@@ -126,7 +126,8 @@ OBJECTS       = base64.o \
 		call_stack_gcc.o \
 		call_stack_windows.o \
 		section-1.o
-DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
+DIST          = ../section-problems/res/nos.txt \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/sanitize.conf \
@@ -453,7 +454,8 @@ distclean: clean
 ####### Sub-libraries
 
 copyResources:
-	cp -r "/home/arshad/git_repos/cs-106B/Section1/section-problems/res/README.txt" "/home/arshad/git_repos/cs-106B/Section1/build-section-1-Desktop-Debug" 
+	cp -r "/home/arshad/git_repos/cs-106B/Section1/section-problems/res/nos.txt" "/home/arshad/git_repos/cs-106B/Section1/build-section-1-Desktop-Debug" 
+	 cp -r "/home/arshad/git_repos/cs-106B/Section1/section-problems/res/README.txt" "/home/arshad/git_repos/cs-106B/Section1/build-section-1-Desktop-Debug" 
 	 cp -r "/home/arshad/git_repos/cs-106B/Section1/section-problems/lib/spl.jar" "/home/arshad/git_repos/cs-106B/Section1/build-section-1-Desktop-Debug" 
 	
 
@@ -952,7 +954,15 @@ call_stack_windows.o: ../section-problems/lib/StanfordCPPLib/stacktrace/call_sta
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o call_stack_windows.o ../section-problems/lib/StanfordCPPLib/stacktrace/call_stack_windows.cpp
 
 section-1.o: ../section-problems/src/section-1.cpp ../section-problems/lib/StanfordCPPLib/console.h \
-		../section-problems/lib/StanfordCPPLib/private/main.h
+		../section-problems/lib/StanfordCPPLib/private/main.h \
+		../section-problems/lib/StanfordCPPLib/simpio.h \
+		../section-problems/lib/StanfordCPPLib/strlib.h \
+		../section-problems/lib/StanfordCPPLib/filelib.h \
+		../section-problems/lib/StanfordCPPLib/vector.h \
+		../section-problems/lib/StanfordCPPLib/compare.h \
+		../section-problems/lib/StanfordCPPLib/error.h \
+		../section-problems/lib/StanfordCPPLib/hashcode.h \
+		../section-problems/lib/StanfordCPPLib/random.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o section-1.o ../section-problems/src/section-1.cpp
 
 ####### Install
