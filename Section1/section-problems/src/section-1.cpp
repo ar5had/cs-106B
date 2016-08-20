@@ -50,6 +50,7 @@ void fileProcessing();
 void cannonBallCount();
 string censorString1(string str, string remove);
 void censorString2(string& str, string remove);
+string censorString3(string str, string remove);
 void readStats(string fname, int & min, int & max, double & mean);
 int cannonBall(int height);
 
@@ -103,19 +104,23 @@ void readStats(string fname, int & min, int & max, double & mean) {
         string no;
         int count = 0;
         while(getline(input, no)) {
-            count++;
             int noVal = stringToInteger(trim(no));
             if (noVal > 100 || noVal < 0)
                 throw "Improper marks in file!";
-            else {
-                if(count == 1)
-                    min = noVal;
-                else
-                    min = min > noVal ? noVal : min;
-                max = max < noVal ? noVal : max;
+            else if (input.fail()) {
+                throw "Some error happened while reading file.";
             }
-            mean += noVal;
-
+            else {
+                // count condition is important because
+                // int initial value is 0 so min will auto will
+                // be zero.
+                min = (count == 0 || min > noVal) ? noVal : min;
+                max = (count == 0 || max < noVal) ? noVal : max;
+            }
+            // count condition is important because
+            // double's initial val is not zero.
+            mean = count == 0 ? noVal : mean + noVal;
+            count++;
         }
         mean /= count;
         input.close();
@@ -129,4 +134,14 @@ int cannonBall(int height) {
         return 1;
     else
         return (height * height) + cannonBall(height - 1);
+}
+
+string censorString3(string str, string remove) {
+    string result = "";
+    for (int i = 0; i < str.length(); i++) {
+        if(remove.find(str[i]) == string::npos) {
+            result += str[i];
+        }
+    }
+    return result;
 }
