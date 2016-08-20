@@ -1,8 +1,4 @@
-File Read
-- input >> word - check this out.
 
-lexicon and trim(word) function and tokenscanner.
-
-Palindrome, printBinary, reverseLine, toh by recursion
-
-Do them after watching julie zelenski vids - Fractal - cantor set lines,Mondrian
+do it in one program file -
+    lexicon and tokenscanner.
+    ofstream questionss

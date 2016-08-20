@@ -3,7 +3,9 @@
  * --------------------------
  * Name: Arshad Khan
  *
- * Transform {1,2,3} to {1,2,3,3,2,1}
+ * mirrorProblem: Transform {1,2,3} to {1,2,3,3,2,1}
+ * stutterProblem: Transform {1,2,3} to {1,1,2,2,3,3}
+ * knightCanMove problem : Checks whether knight can move to a particular location on chess grid
  */
 
 #include <iostream>

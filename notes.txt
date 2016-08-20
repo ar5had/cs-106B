@@ -123,3 +123,8 @@ Another strategy for for loop:
 
 
 Note - while checking conditions, first return false in all the failing conditions then what left will be true.
+
+Note- File Read
+    - input >> word - discourage way to read from ifstream instance i.e input
+     here. 
+    Use getLine and cast it later according to need.
