@@ -10,7 +10,7 @@
  * diceRoll - prints all the possible outcomes when n no of dices are rolled.
  * diceSumRoll - prints all the possible outcomes whose sum is equal to desired sum when
  *               n no of dices are rolled.
- *
+ * sublists - print out all the sublists of a list given by user.
  */
 
 #include <iostream>
@@ -30,6 +30,8 @@ void diceSumRoll(int dices, int sum);
 void diceSumRollBadHelper(int dices, int sum, Vector<int>& chosen);
 void diceSumRollEffHelper(int dices, int sum, int sofar, Vector<int>& chosen);
 int sumOfElems(Vector<int>& vect);
+void sublists(Vector<string>& str);
+void sublistsHelper(Vector<string>& str, Vector<string>& chosen);
 int badHelperCount = 0, goodHelperCount = 0;
 
 int main() {
@@ -42,9 +44,18 @@ int main() {
 //    diceRoll(getInteger("Enter the no of dices: "));
 //    cout << endl;
 //    cout << endl;
-    diceSumRoll(getInteger("Enter the no of dices: "), getInteger("Enter the sum: "));
-    cout << "Bad helper took " << badHelperCount << " calls." << endl;
-    cout << "Good helper took " << goodHelperCount << " calls." << endl;
+//    diceSumRoll(getInteger("Enter the no of dices: "), getInteger("Enter the sum: "));
+//    cout << "Bad helper took " << badHelperCount << " calls." << endl;
+//    cout << "Good helper took " << goodHelperCount << " calls." << endl;
+    cout << "\n\nEnter the string in list to get all of its sublists" << endl;
+    Vector<string> list;
+    string line = getLine("Enter string: ");
+    while(true) {
+        list.add(line);
+        line = getLine("Enter string: ");
+        if(line == "") break;
+    }
+    sublists(list);
     return 0;
 }
 
@@ -135,4 +146,26 @@ int sumOfElems(Vector<int>& vect) {
     for(int elem: vect)
         total += elem;
     return total;
+}
+
+void sublists(Vector<string>& list) {
+    Vector<string> chosen;
+    sublistsHelper(list, chosen);
+}
+
+void sublistsHelper(Vector<string>& list, Vector<string>& chosen) {
+    if (list.isEmpty())
+        cout << chosen << endl;
+    else {
+        string first = list[0];
+        list.remove(0);
+        chosen.add(first);
+        // exploring with first
+        sublistsHelper(list, chosen);
+        chosen.remove(chosen.size() - 1);
+        // exploring without first
+        sublistsHelper(list, chosen);
+        // adding back to first place or zeroth index
+        list.insert(0, first);
+    }
 }
