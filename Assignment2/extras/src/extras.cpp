@@ -119,8 +119,9 @@ void diceSumRollEffHelper(int dices, int sum, int sofar, Vector<int>& chosen) {
         cout << chosen << endl;
     } else {
         for (int i = 1; i < 7; i++) {
+             // if sofar is not too big and not too small
             if (sofar + i + 1*(dices - 1) <= sum &&
-               sofar + i + 6*(dices - 1) >= sum) {
+                sofar + i + 6*(dices - 1) >= sum) {
                 chosen.add(i);
                 diceSumRollEffHelper(dices - 1, sum, sofar + i, chosen);
                 chosen.remove(chosen.size() - 1);
