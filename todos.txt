@@ -2,3 +2,6 @@
 do it in one program file -
     lexicon and tokenscanner.
     ofstream questionss
+
+lect 14 -
+  print binary, print decimal 
