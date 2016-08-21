@@ -28,19 +28,23 @@ void diceRoll(int dices);
 void diceRollHelper(int dices, Vector<int>& chosen);
 void diceSumRoll(int dices, int sum);
 void diceSumRollBadHelper(int dices, int sum, Vector<int>& chosen);
+void diceSumRollEffHelper(int dices, int sum, int sofar, Vector<int>& chosen);
 int sumOfElems(Vector<int>& vect);
+int badHelperCount = 0, goodHelperCount = 0;
 
 int main() {
-    printBinary(getInteger("Enter the no of digits upto which you want a list of binary nos: "));
-    cout << endl;
-    cout << endl;
-    printDecimal(getInteger("Enter the no of digits upto which you want a list of decimal nos: "));
-    cout << endl;
-    cout << endl;
-    diceRoll(getInteger("Enter the no of dices: "));
-    cout << endl;
-    cout << endl;
+//    printBinary(getInteger("Enter the no of digits upto which you want a list of binary nos: "));
+//    cout << endl;
+//    cout << endl;
+//    printDecimal(getInteger("Enter the no of digits upto which you want a list of decimal nos: "));
+//    cout << endl;
+//    cout << endl;
+//    diceRoll(getInteger("Enter the no of dices: "));
+//    cout << endl;
+//    cout << endl;
     diceSumRoll(getInteger("Enter the no of dices: "), getInteger("Enter the sum: "));
+    cout << "Bad helper took " << badHelperCount << " calls." << endl;
+    cout << "Good helper took " << goodHelperCount << " calls." << endl;
     return 0;
 }
 
@@ -86,12 +90,16 @@ void diceSumRoll(int dices, int sum) {
     // using helper when we dont want to change signature of
     // original function.
     Vector<int> chosen;
+    cout << "Using bad helper "<< endl;
     diceSumRollBadHelper(dices, sum, chosen);
+    cout << "\nUsing good helper "<<endl;
+    diceSumRollEffHelper(dices, sum, 0, chosen);
 }
 
 
 // 'bad' because method to get result is very inefficient.
 void diceSumRollBadHelper(int dices, int sum, Vector<int>& chosen) {
+    badHelperCount++;
     if (dices == 0) {
         if (sumOfElems(chosen) == sum)
             cout << chosen << endl;
@@ -100,6 +108,23 @@ void diceSumRollBadHelper(int dices, int sum, Vector<int>& chosen) {
             chosen.add(i);
             diceSumRollBadHelper(dices - 1, sum, chosen);
             chosen.remove(chosen.size() - 1);
+        }
+    }
+}
+
+// efficient helper
+void diceSumRollEffHelper(int dices, int sum, int sofar, Vector<int>& chosen) {
+    goodHelperCount++;
+    if (dices == 0) {
+        cout << chosen << endl;
+    } else {
+        for (int i = 1; i < 7; i++) {
+            if (sofar + i + 1*(dices - 1) <= sum &&
+               sofar + i + 6*(dices - 1) >= sum) {
+                chosen.add(i);
+                diceSumRollEffHelper(dices - 1, sum, sofar + i, chosen);
+                chosen.remove(chosen.size() - 1);
+            }
         }
     }
 }
