@@ -1,6 +1,6 @@
 
 do it in one program file -
-    lexicon and tokenscanner.
+    tokenscanner.
     ofstream questionss
 
 watch jzelenski - sorting, bsearcch, backtracking vids.
@@ -11,4 +11,10 @@ http://media.pearsoncmg.com/aw/aw_reges_bjp_2/videoPlayer.php?id=c12-2
 http://media.pearsoncmg.com/aw/aw_reges_bjp_2/videoPlayer.php?id=c12-3
 (sorting)
 
+
 Read chapter - 1-10 from eroberts book.
+
+Do maze problem with sol path.
+Do nim game
+Clear minimax algo
+Insertion sort and merge sort

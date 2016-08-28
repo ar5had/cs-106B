@@ -1,11 +1,12 @@
 /*
  * File: WordLadder.cpp
  * --------------------
- * Name: [TODO: enter name here]
- * Section: [TODO: enter section leader here]
+ * Name: Arshad Khan
  * This file is the starter project for the word ladder problem
  * on Assignment #2.
- * [TODO: extend the documentation]
+ * This program implements a word ladder problem which uses BFS
+ * to findout a ladder of possible words that are one step away
+ * from each other.
  */
 
 #include <iostream>
@@ -18,5 +19,6 @@ using namespace std;
 
 int main() {
 	// [TODO: fill in the code]
-	return 0;
+    practiceLexicon();
+    return 0;
 }

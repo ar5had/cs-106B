@@ -126,5 +126,21 @@ Note - while checking conditions, first return false in all the failing conditio
 
 Note- File Read
     - input >> word - discourage way to read from ifstream instance i.e input
-     here. 
+     here.
     Use getLine and cast it later according to need.
+
+
+Implementing ArrayList --------------------------------------------------------
+
+  Two types of Array in C++
+
+  1- type* name = new type[length]
+
+  dynamically allocated array + var is pointer + memory should be manually
+  released or program will have a memory leak;
+  stored in stack
+
+  2- type name[length];
+
+  fixed array - cant be resized
+  stored in heap
